@@ -230,28 +230,41 @@
       font-weight: 600;
       animation: fadeIn 0.8s ease-out 0.5s both;
     }
-    
-    .image-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    /* Галерея */
+    .videos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: var(--gap);
       margin: 35px 0;
       animation: fadeIn 0.8s ease-out 0.6s both;
     }
 
-    .gallery-image {
-      width: 100%;
-      height: auto;
+    .video-wrapper {
+      position: relative;
       border-radius: 14px;
+      overflow: hidden;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
       transition: all 0.3s ease;
-      object-fit: cover;
-      aspect-ratio: 1 / 1; 
     }
 
-    .gallery-image:hover {
-      transform: translateY(-8px) scale(1.05);
+    .video-wrapper:hover {
+      transform: translateY(-8px) scale(1.02);
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    img.pic {
+      width: 280px;
+      display: block;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @media (max-width: 640px) {
+      img.pic {
+        width: 90vw;
+      }
     }
 
     .footer {
@@ -282,43 +295,6 @@
       animation: pulse 1.5s ease-in-out infinite;
       font-size: 1.2em;
     }
-
-    @media (max-width: 768px) {
-      .wrap {
-        padding: 36px 24px;
-      }
-
-      h1 {
-        font-size: 1.8em;
-      }
-
-      .address-card {
-        padding: 24px 20px;
-      }
-
-      .address-item {
-        font-size: 1em;
-      }
-    }
-
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 1.6em;
-      }
-
-      .lead {
-        font-size: 1em;
-      }
-
-      .footer-text {
-        font-size: 1.2em;
-      }
-
-      .image-gallery {
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -328,14 +304,11 @@
     <div class="address-card">
       <div class="address-item">
         <span class="icon">📍</span>
-        <div><strong>Москва, посёлок Коммунарка, микрорайон Эдальго, 7
-<br>Студия керамики Happy Iguana
-</strong></div>
+        <div><strong>Москва, посёлок Коммунарка, микрорайон Эдальго, 7<br>Студия керамики Happy Iguana</strong></div>
       </div>
       <div class="address-item">
         <span class="icon">🚇</span>
-        <div>Метро: <strong>Коммунарка, Теплый стан
-</strong> </div>
+        <div>Метро: <strong>Коммунарка, Теплый стан</strong></div>
       </div>
       <div class="address-item">
         <span class="icon">🌐</span>
@@ -347,13 +320,24 @@
         </div>
       </div>
     </div>
-    
-    <!-- Секция с изображениями из корневой папки -->
-    <div class="image-gallery">
-      <img src="image1.jpg" alt="Фото группы Авангард 1" class="gallery-image">
-      <img src="image2.jpg" alt="Фото группы Авангард 2" class="gallery-image">
-      <img src="image3.jpg" alt="Фото группы Авангард 3" class="gallery-image">
-      <img src="image4.jpg" alt="Фото группы Авангард 4" class="gallery-image">
+
+    <!-- ✅ Галерея с картинками -->
+    <div class="videos">
+      <div class="video-wrapper">
+        <img src="img1.jpg" alt="Фото 1" class="pic">
+      </div>
+
+      <div class="video-wrapper">
+        <img src="img2.jpg" alt="Фото 2" class="pic">
+      </div>
+
+      <div class="video-wrapper">
+        <img src="img3.jpg" alt="Фото 3" class="pic">
+      </div>
+
+      <div class="video-wrapper">
+        <img src="img4.jpg" alt="Фото 4" class="pic">
+      </div>
     </div>
 
     <div class="footer">
